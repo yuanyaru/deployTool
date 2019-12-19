@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/common/jquery.treeview.css')}}">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/common/jquery-3.3.1.min.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/common/jquery.treeview.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/common/index.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/monitoring_data.js')}}"></script>
+</head>
+<body>
+<div id="header">
+    <span class="span0">部 署 工 具</span>
+    <span class="span1" id="time"><span></span>年<span></span>月<span></span>日<span></span>时<span></span>分<span></span>秒</span>
+    <span class="span3"><a id="refresh" href="#" onClick="window.location.reload()">刷新</a></span>
+</div>
+
+<div id="nav">
+   <ul id="browser" class="filetree treeview-famfamfam">
+   <ul>
+		<li id="cluster" class="closed">
+            <span class="folder">集群列表</span>
+                <ul>
+                {% for i in range(nodeLen) %}
+                    <li class="closed">
+                        <span class="folder" name="ip">{{ nodes[i] }}</span>
+                    </li>
+                {% endfor %}
+                </ul>
+		</li>
+   </ul>
+   </ul>
+</div>
+
+<div id="section">
+    <div class="row" id="container_table">
+    <fieldset>
+        <legend class="legend">容器列表</legend>
+        <input type="button" onclick="" value="添加"/>
+        <p></p>
+        <p></p>
+        <div contenteditable>
+            <table id="table_info" bordercolor="#aaaaaa" border="1" cellpadding="0" cellpadding="2" width="100%">
+                <thead>
+                <tr>
+                    <th>CONTAINER ID</th>
+                    <th>IMAGE</th>
+                    <th>CONTAINER NAME</th>
+                    <th>STATUS</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody id="tBody">
+                </tbody>
+            </table>
+        </div>
+    </fieldset>
+    </div>
+</div>
+
+<div id="footer">
+    @2019  西安端怡科技有限公司
+    <span id="about">关于产品</span>
+    <span id="contect">联系我们</span>
+</div>
+</body>
+</html>
