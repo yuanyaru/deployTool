@@ -38,17 +38,20 @@
     <fieldset>
         <legend class="legend">容器列表</legend>
         <input type="button" onclick="" value="添加"/>
+        <input type="button" onclick="" value="删除"/>
+        <input type="button" onclick="stop_container()" value="停止"/>
+        <input type="button" onclick="start_container()" value="启动"/>
         <p></p>
         <p></p>
         <div contenteditable>
             <table id="table_info" bordercolor="#aaaaaa" border="1" cellpadding="0" cellpadding="2" width="100%">
                 <thead>
                 <tr>
+                    <th><input type="checkbox" class="i-checks" id="selectAllCon"/></th>
                     <th>CONTAINER ID</th>
                     <th>IMAGE</th>
                     <th>CONTAINER NAME</th>
                     <th>STATUS</th>
-                    <th>操作</th>
                 </tr>
                 </thead>
                 <tbody id="tBody">

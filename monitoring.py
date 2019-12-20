@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# -*- coding:utf-8 -*-
+# -*- encoding:utf-8 -*-
 
 from flask import Blueprint, request
 import docker
@@ -13,7 +13,7 @@ def get_containers():
     ip = request.form.get("ip")
     port = "2375"
     client = docker.Client(base_url='tcp://' + ip + ':' + port)
-    containers = client.containers()
+    containers = client.containers(all=True)
     container_list = []
     for container in containers:
         # CONTAINER ID
@@ -29,3 +29,28 @@ def get_containers():
         container_list.append({"container_id": container_id, "container_image": container_image,
                                "container_name": container_name, "container_state": container_state})
     return json.dumps(container_list)
+
+# stop container
+@monitoring_blu.route('/stop_container', methods=['POST'])
+def stop_containers():
+    ip = request.form.get("ip")
+    port = "2375"
+    client = docker.Client(base_url='tcp://' + ip + ':' + port)
+    cnames = request.form.get("cnames")
+    names = json.loads(cnames)
+    for name in names:
+        client.stop(name)
+    return "容器已经停止!"
+
+# start container
+@monitoring_blu.route('/start_container', methods=['POST'])
+def start_containers():
+    ip = request.form.get("ip")
+    port = "2375"
+    client = docker.Client(base_url='tcp://' + ip + ':' + port)
+    cnames = request.form.get("cnames")
+    names = json.loads(cnames)
+    for name in names:
+        client.start(name)
+    return "容器已经启动!"
+
