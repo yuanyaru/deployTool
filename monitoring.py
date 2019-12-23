@@ -30,18 +30,6 @@ def get_containers():
                                "container_name": container_name, "container_state": container_state})
     return json.dumps(container_list)
 
-# stop container
-@monitoring_blu.route('/stop_container', methods=['POST'])
-def stop_containers():
-    ip = request.form.get("ip")
-    port = "2375"
-    client = docker.Client(base_url='tcp://' + ip + ':' + port)
-    cnames = request.form.get("cnames")
-    names = json.loads(cnames)
-    for name in names:
-        client.stop(name)
-    return "容器已经停止!"
-
 # start container
 @monitoring_blu.route('/start_container', methods=['POST'])
 def start_containers():
@@ -54,3 +42,26 @@ def start_containers():
         client.start(name)
     return "容器已经启动!"
 
+# stop container
+@monitoring_blu.route('/stop_container', methods=['POST'])
+def stop_containers():
+    ip = request.form.get("ip")
+    port = "2375"
+    client = docker.Client(base_url='tcp://' + ip + ':' + port)
+    cnames = request.form.get("cnames")
+    names = json.loads(cnames)
+    for name in names:
+        client.stop(name)
+    return "容器已经停止!"
+
+# remove container
+@monitoring_blu.route('/remove_container', methods=['POST'])
+def remove_containers():
+    ip = request.form.get("ip")
+    port = "2375"
+    client = docker.Client(base_url='tcp://' + ip + ':' + port)
+    cnames = request.form.get("cnames_rm")
+    names = json.loads(cnames)
+    for name in names:
+        client.remove_container(name)
+    return "容器已经移除!"
