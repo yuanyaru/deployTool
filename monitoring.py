@@ -7,6 +7,7 @@ import json
 
 monitoring_blu = Blueprint('monitor', __name__)
 
+
 # 获取各节点的容器列表
 @monitoring_blu.route('/container_data', methods=['POST'])
 def get_containers():
@@ -30,6 +31,7 @@ def get_containers():
                                "container_name": container_name, "container_state": container_state})
     return json.dumps(container_list)
 
+
 # start container
 @monitoring_blu.route('/start_container', methods=['POST'])
 def start_containers():
@@ -42,6 +44,7 @@ def start_containers():
         client.start(name)
     return "容器已经启动!"
 
+
 # stop container
 @monitoring_blu.route('/stop_container', methods=['POST'])
 def stop_containers():
@@ -53,6 +56,7 @@ def stop_containers():
     for name in names:
         client.stop(name)
     return "容器已经停止!"
+
 
 # remove container
 @monitoring_blu.route('/remove_container', methods=['POST'])
