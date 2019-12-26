@@ -32,6 +32,19 @@ def get_containers():
     return json.dumps(container_list)
 
 
+def get_images_used():
+    ip = request.form.get("ip")
+    port = "2375"
+    client = docker.Client(base_url='tcp://' + ip + ':' + port)
+    containers = client.containers(all=True)
+    image_list = []
+    for container in containers:
+        # IMAGE
+        container_image = container["Image"]
+        image_list.append(container_image)
+    return image_list
+
+
 # start container
 @monitoring_blu.route('/start_container', methods=['POST'])
 def start_containers():

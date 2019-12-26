@@ -8,6 +8,7 @@
     <script type="text/javascript" src="{{ url_for('static', filename='js/common/jquery.treeview.js')}}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/common/index.js')}}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/monitoring_data.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/build_container.js')}}"></script>
 </head>
 <body>
 <div id="header">
@@ -34,14 +35,38 @@
 </div>
 
 <div id="section">
+    <div class="row" id="build_container">
+        <fieldset>
+            <legend class="legend">构建容器</legend>
+            <input id="image_name" value="请输入要拉取的镜像名称">
+            <input type="button" onclick="pull_image()" value="下载镜像"><br />
+            <textarea id="image_pull_info"></textarea>
+            <input type="button" onclick="remove_image()" value="移除" />
+            <p></p>
+            <table id="table_image" bordercolor="#aaaaaa" border="1" cellpadding="0" cellpadding="2" width="100%">
+                <thead>
+                <tr>
+                    <th><input type="checkbox" class="i-checks" id="selectAllImg"/></th>
+                    <th>IMAGE ID</th>
+                    <th>RepoTags</th>
+                </tr>
+                </thead>
+                <tbody id="iBody">
+                </tbody>
+            </table>
+            image name：<input id="iname"/>
+            container name：<input id="cname"/>  <input type="button" onclick="create_container()" value="创建容器">
+            <input type="button" onclick="show_container_table()" value="查看容器列表">
+            <textarea id="create_container_info"></textarea>
+    </fieldset>
+    </div>
     <div class="row" id="container_table">
     <fieldset>
         <legend class="legend">容器列表</legend>
-        <input type="button" onclick="" value="添加"/>
+        <input type="button" onclick="add_container()" value="添加"/>
         <input type="button" onclick="remove_container()" value="移除" title="移除容器前，请先停止该容器！"/>
         <input type="button" onclick="stop_container()" value="停止"/>
         <input type="button" onclick="start_container()" value="启动"/>
-        <p></p>
         <p></p>
         <div contenteditable>
             <table id="table_info" bordercolor="#aaaaaa" border="1" cellpadding="0" cellpadding="2" width="100%">
@@ -54,7 +79,7 @@
                     <th>STATUS</th>
                 </tr>
                 </thead>
-                <tbody id="tBody">
+                <tbody id="cBody">
                 </tbody>
             </table>
         </div>

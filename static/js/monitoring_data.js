@@ -9,28 +9,30 @@ function nodeClick() {
     var elems = document.getElementsByName("ip");
     for (var i=0;i<elems.length;i++){
         elems[i].addEventListener('click', function (evt) {
-            clear_table();
+            clear_container_table();
             var elm = $(this);
             ip = $(elm).text();
-            show_table();
+            show_container_table();
         });
     }
 }
 
-function show_table() {
+function show_container_table() {
     document.getElementById("container_table").style.display="block";
-    show_data();
+    document.getElementById("build_container").style.display="none";
+
+    show_container_list();
 }
 
-// 清空表格
-function clear_table() {
-    $("tBody").text("");
+// 清空容器表格
+function clear_container_table() {
+    $("#cBody").text("");
 }
 
 // 显示各节点的容器列表
-function show_data() {
+function show_container_list() {
     $.post("/container_data", {"ip": ip}, function(res) {
-        clear_table();
+        clear_container_table();
         var resLen = res.length;
         if (resLen > 2) {
             // 将JSON字符串反序列化成JSON对象
@@ -42,10 +44,10 @@ function show_data() {
                 + "</td><td>" + res2Json[i].container_name
                 + "</td><td>" + res2Json[i].container_state + "</td></tr>";
 
-                $("#tBody").append(str);
+                $("#cBody").append(str);
             }
         } else {
-            document.getElementById("tBody").innerHTML = "容器列表为空！";
+            document.getElementById("cBody").innerHTML = "容器列表为空！";
         }
     });
 }
@@ -58,7 +60,7 @@ function get_container_len() {
        if (this.checked) {
            var status = $(this).parents('tr').children().eq(4).text();
            var cname = $(this).parents('tr').children().eq(3).text();
-           if(status == "exited") {
+           if(status == "exited" || status == "created") {
                cnames.push(cname);
                cnames_rm.push(cname);
            } else {
@@ -81,11 +83,11 @@ function start_container() {
                 "ip": ip,
                 "cnames": JSON.stringify(cnames)
             }, function (res) {
-                show_data();
-                $("input[type='checkbox']").not(this).prop("checked", false);
+                show_container_list();
+                $("input[type='checkbox'][name='cname']").not(this).prop("checked", false);
             });
         } else {
-            $("input[type='checkbox']").not(this).prop("checked", false);
+            $("input[type='checkbox'][name='cname']").not(this).prop("checked", false);
         }
     } else {
         alert("请先选择要启动的容器！");
@@ -101,11 +103,11 @@ function stop_container() {
                 "ip": ip,
                 "cnames": JSON.stringify(cnames)
             }, function (res) {
-                show_data();
-                $("input[type='checkbox']").not(this).prop("checked", false);
+                show_container_list();
+                $("input[type='checkbox'][name='cname']").not(this).prop("checked", false);
             });
         } else {
-            $("input[type='checkbox']").not(this).prop("checked", false);
+            $("input[type='checkbox'][name='cname']").not(this).prop("checked", false);
         }
     } else {
         alert("请先选择要停止的容器！");
@@ -121,14 +123,15 @@ function remove_container() {
                 "ip": ip,
                 "cnames_rm": JSON.stringify(cnames_rm)
             }, function (res) {
-                show_data();
-                $("input[type='checkbox']").not(this).prop("checked", false);
+                show_container_list();
+                $("input[type='checkbox'][name='cname']").not(this).prop("checked", false);
             });
         } else {
-            $("input[type='checkbox']").not(this).prop("checked", false);
+            $("input[type='checkbox'][name='cname']").not(this).prop("checked", false);
         }
     } else {
-        alert("请先选择要移除的容器！");
+        alert("请选择未运行的容器进行移除！");
+        $("input[type='checkbox'][name='cname']").not(this).prop("checked", false);
     }
 }
 
@@ -136,9 +139,9 @@ function remove_container() {
 $(function() {
 	$("#selectAllCon").bind("click",function() {
 		if($(this).prop("checked")) {
-			$("input[type='checkbox']").not(this).prop("checked",true);
+			$("input[type='checkbox'][name='cname']").not(this).prop("checked",true);
 		} else {
-			$("input[type='checkbox']").not(this).prop("checked",false);
+			$("input[type='checkbox'][name='cname']").not(this).prop("checked",false);
 		}
 	});
 });

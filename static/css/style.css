@@ -58,7 +58,7 @@ a {
     text-decoration: none;
 }
 input[type=button] {
-    float: right;
+    /*float: right;*/
     margin: 5px;
 }
 .span0 {
@@ -82,15 +82,24 @@ input[type=button] {
     float: right;
     margin-right: 20px;
 }
-#container_table {
+#container_table, #build_container {
     display: none;
 }
 #refresh {
     color: white;
 }
-#table_info {
+#table_info, #table_image {
     background-color: #eeeeee;
 }
 .legend {
     font-weight: bold;
+}
+#image_pull_info, #create_container_info {
+    width: 500px;
+    height: 100px;
+    display: none;
+}
+#image_name {
+    height: 20px;
+    width: 300px;
 }

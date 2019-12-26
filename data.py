@@ -4,6 +4,7 @@
 from flask import Flask, render_template
 import sys
 from monitoring import monitoring_blu
+from buildContainer import container_blu
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -11,6 +12,7 @@ sys.setdefaultencoding('utf-8')
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 app.register_blueprint(monitoring_blu)
+app.register_blueprint(container_blu)
 
 
 def set_node_list():
