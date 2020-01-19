@@ -2,7 +2,7 @@ var inames_rm;
 function add_container() {
     document.getElementById("build_container").style.display="block";
     document.getElementById("container_table").style.display="none";
-    
+
     show_image_list();
 }
 
@@ -68,12 +68,13 @@ function remove_image() {
 
 // pull image
 function pull_image() {
+    document.getElementById("image_pull_info").style.display="block";
+    document.getElementById("image_pull_info").innerHTML = "稍等片刻，正在下载......";
     var image_name = document.getElementById("image_name").value;
     $.post("pull_image", {
                 "ip": ip,
                 "image_name": JSON.stringify(image_name)
             }, function (res) {
-                document.getElementById("image_pull_info").style.display="block";
                 document.getElementById("image_pull_info").innerHTML = res;
                 show_image_list();
             });
@@ -81,6 +82,8 @@ function pull_image() {
 
 // create container
 function create_container() {
+    document.getElementById("create_container_info").style.display="block";
+    document.getElementById("create_container_info").innerHTML = "稍等片刻，正在创建容器......";
     var iname = document.getElementById("iname").value;
     var cname = document.getElementById("cname").value;
     $.post("create_container", {
@@ -88,7 +91,6 @@ function create_container() {
                 "iname": JSON.stringify(iname),
                 "cname": JSON.stringify(cname)
             }, function (res) {
-                document.getElementById("create_container_info").style.display="block";
                 document.getElementById("create_container_info").innerHTML = res;
             });
 }

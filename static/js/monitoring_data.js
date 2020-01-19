@@ -17,7 +17,16 @@ function nodeClick() {
     }
 }
 
+function clear_download_info() {
+    document.getElementById("image_pull_info").style.display="none";
+    document.getElementById("create_container_info").style.display="none";
+    document.getElementById("image_name").value = "请输入要拉取的镜像名称";
+    document.getElementById("iname").value = "";
+    document.getElementById("cname").value = "";
+}
+
 function show_container_table() {
+    clear_download_info();
     document.getElementById("container_table").style.display="block";
     document.getElementById("build_container").style.display="none";
 

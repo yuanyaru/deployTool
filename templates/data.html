@@ -41,7 +41,7 @@
             <input id="image_name" value="请输入要拉取的镜像名称">
             <input type="button" onclick="pull_image()" value="下载镜像"><br />
             <textarea id="image_pull_info"></textarea>
-            <input type="button" onclick="remove_image()" value="移除" />
+            <input type="button" onclick="remove_image()" value="移除" title="移除镜像前，请确保未被任何容器使用！"/>
             <p></p>
             <table id="table_image" bordercolor="#aaaaaa" border="1" cellpadding="0" cellpadding="2" width="100%">
                 <thead>
@@ -88,7 +88,7 @@
 </div>
 
 <div id="footer">
-    @2019  西安端怡科技有限公司
+    @2020  西安端怡科技有限公司
     <span id="about">关于产品</span>
     <span id="contect">联系我们</span>
 </div>
