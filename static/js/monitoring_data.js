@@ -93,10 +93,10 @@ function start_container() {
                 "cnames": JSON.stringify(cnames)
             }, function (res) {
                 show_container_list();
-                $("input[type='checkbox'][name='cname']").not(this).prop("checked", false);
+                $("input[type='checkbox']").not(this).prop("checked", false);
             });
         } else {
-            $("input[type='checkbox'][name='cname']").not(this).prop("checked", false);
+            $("input[type='checkbox']").not(this).prop("checked", false);
         }
     } else {
         alert("请先选择要启动的容器！");
@@ -113,10 +113,10 @@ function stop_container() {
                 "cnames": JSON.stringify(cnames)
             }, function (res) {
                 show_container_list();
-                $("input[type='checkbox'][name='cname']").not(this).prop("checked", false);
+                $("input[type='checkbox']").not(this).prop("checked", false);
             });
         } else {
-            $("input[type='checkbox'][name='cname']").not(this).prop("checked", false);
+            $("input[type='checkbox']").not(this).prop("checked", false);
         }
     } else {
         alert("请先选择要停止的容器！");
@@ -133,14 +133,14 @@ function remove_container() {
                 "cnames_rm": JSON.stringify(cnames_rm)
             }, function (res) {
                 show_container_list();
-                $("input[type='checkbox'][name='cname']").not(this).prop("checked", false);
+                $("input[type='checkbox']").not(this).prop("checked", false);
             });
         } else {
-            $("input[type='checkbox'][name='cname']").not(this).prop("checked", false);
+            $("input[type='checkbox']").not(this).prop("checked", false);
         }
     } else {
         alert("请选择未运行的容器进行移除！");
-        $("input[type='checkbox'][name='cname']").not(this).prop("checked", false);
+        $("input[type='checkbox']").not(this).prop("checked", false);
     }
 }
 
