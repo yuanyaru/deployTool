@@ -16,7 +16,7 @@ app.register_blueprint(container_blu)
 
 
 def set_node_list():
-    nodelist = ["192.168.100.61", "192.168.100.62", "192.168.100.63"]
+    nodelist = ["192.168.100.61", "192.168.100.62", "192.168.100.63", "192.168.100.64"]
     return nodelist
 
 
