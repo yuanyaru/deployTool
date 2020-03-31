@@ -26,6 +26,7 @@ function clear_download_info() {
 }
 
 function show_container_table() {
+    document.getElementById("node_ip").innerText="---"+ip;
     clear_download_info();
     document.getElementById("container_table").style.display="block";
     document.getElementById("build_container").style.display="none";
