@@ -9,6 +9,8 @@
     <script type="text/javascript" src="{{ url_for('static', filename='js/common/index.js')}}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/monitoring_data.js')}}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/build_container.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/node_modules/ice/lib/Ice.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/Printer.js')}}"></script>
 </head>
 <body>
 <div id="header">
@@ -58,7 +60,29 @@
             image name：<input id="iname"/>
             container name：<input id="cname"/>  <input type="button" onclick="create_container()" value="创建容器">
             <input type="button" onclick="show_container_table()" value="查看容器列表">
-            <textarea id="create_container_info"></textarea>
+            <textarea id="create_container_info"></textarea><br>
+            <textarea id="sh"></textarea>
+            <input type="button" id="exec" value="保存">
+            <section role="main" id="body">
+		        <div class="row">
+			        <div class="large-12 medium-12 columns">
+				        <form>
+					        <div class="row">
+                                <div class="small-12 columns">
+                                    <a href="#" class="button small" id="print">执行</a>
+                                    <textarea id="output" readonly></textarea>
+                                </div>
+					        </div>
+					        <div id="progress" class="row hide">
+						        <div class="small-12 columns left">
+                                    <div class="inline left icon"></div>
+                                    <div class="text">Sending Request...</div>
+						        </div>
+					        </div>
+				        </form>
+			        </div>
+		        </div>
+	        </section>
     </fieldset>
     </div>
     <div class="row" id="container_table">
@@ -93,5 +117,6 @@
     <span id="about">关于产品</span>
     <span id="contect">联系我们</span>
 </div>
+<script type="text/javascript" src="{{ url_for('static', filename='js/Client.js')}}"></script>
 </body>
 </html>

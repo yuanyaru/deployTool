@@ -99,6 +99,10 @@ input[type=button] {
     height: 100px;
     display: none;
 }
+#sh {
+    width: 300px;
+    height: 500px;
+}
 #image_name {
     height: 20px;
     width: 300px;
