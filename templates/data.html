@@ -62,15 +62,15 @@
             <input type="button" onclick="show_container_table()" value="查看容器列表">
             <textarea id="create_container_info"></textarea><br>
             <textarea id="sh"></textarea>
-            <input type="button" id="exec" value="保存">
             <section role="main" id="body">
 		        <div class="row">
 			        <div class="large-12 medium-12 columns">
 				        <form>
 					        <div class="row">
                                 <div class="small-12 columns">
-                                    <a href="#" class="button small" id="print">执行</a>
-                                    <textarea id="output" readonly></textarea>
+                                    <input type="button" id="exec" value="保存">
+                                    <input type="button" id="print" value="执行">
+                                    <div id="output"></div>
                                 </div>
 					        </div>
 					        <div id="progress" class="row hide">
