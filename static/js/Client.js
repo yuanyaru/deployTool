@@ -14,7 +14,8 @@
             //服务端在本地
             // const hostname = document.location.hostname || "127.0.0.1";
             //服务端在远端
-            const hostname = "192.168.100.61";
+            // const hostname = "192.168.100.61";
+            const hostname = ip;
             const proxy = communicator.stringToProxy(`SimplePrinter:ws -h ${hostname} -p 10000`);
             const printer = await Demo.PrinterPrx.checkedCast(proxy);
             if(printer)
