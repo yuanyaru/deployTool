@@ -13,6 +13,7 @@ container_blu = Blueprint('container', __name__)
 @container_blu.route('/image_data', methods=['POST'])
 def get_images():
     ip = request.form.get("ip")
+    print ip
     port = "2375"
     client = docker.Client(base_url='tcp://' + ip + ':' + port)
     images = client.images()
@@ -21,8 +22,12 @@ def get_images():
         # IMAGE ID
         image_id = str(image["Id"])[7:19]
         # RepoTags
-        image_tags = image["RepoTags"][0]
-        image_list.append({"image_id": image_id, "image_tags": image_tags})
+        image_tags = image["RepoTags"]
+        if image_tags is None:
+            continue
+        else:
+            image_tag = image["RepoTags"][0]
+            image_list.append({"image_id": image_id, "image_tags": image_tag})
     return json.dumps(image_list)
 
 
