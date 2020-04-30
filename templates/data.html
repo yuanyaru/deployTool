@@ -60,29 +60,30 @@
             image name：<input id="iname"/>
             container name：<input id="cname"/>  <input type="button" onclick="create_container()" value="创建容器">
             <input type="button" onclick="show_container_table()" value="查看容器列表">
+            <input type="button" onclick="build_cluster()" value="构建集群">
             <textarea id="create_container_info"></textarea><br>
             <textarea id="sh"></textarea>
             <section role="main" id="body">
-		        <div class="row">
-			        <div class="large-12 medium-12 columns">
-				        <form>
-					        <div class="row">
-                                <div class="small-12 columns">
-                                    <input type="button" id="exec" value="保存">
-                                    <input type="button" id="print" value="执行">
-                                    <div id="output"></div>
+                    <div class="row">
+                        <div class="large-12 medium-12 columns">
+                            <form>
+                                <div class="row">
+                                    <div class="small-12 columns">
+                                        <input type="button" id="exec" value="保存">
+                                        <input type="button" id="print" value="执行">
+                                        <div id="output"></div>
+                                    </div>
                                 </div>
-					        </div>
-					        <div id="progress" class="row hide">
-						        <div class="small-12 columns left">
-                                    <div class="inline left icon"></div>
-                                    <div class="text">Sending Request...</div>
-						        </div>
-					        </div>
-				        </form>
-			        </div>
-		        </div>
-	        </section>
+                                <div id="progress" class="row hide">
+                                    <div class="small-12 columns left">
+                                        <div class="inline left icon"></div>
+                                        <div class="text">Sending Request...</div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
     </fieldset>
     </div>
     <div class="row" id="container_table">

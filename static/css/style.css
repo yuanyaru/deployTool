@@ -94,7 +94,7 @@ input[type=button] {
 .legend {
     font-weight: bold;
 }
-#image_pull_info, #create_container_info {
+#image_pull_info, #create_container_info, #sh, #body {
     width: 500px;
     height: 100px;
     display: none;

@@ -2,6 +2,8 @@ var inames_rm;
 function add_container() {
     document.getElementById("build_container").style.display="block";
     document.getElementById("container_table").style.display="none";
+    document.getElementById("sh").style.display="none";
+    document.getElementById("body").style.display="none";
 
     show_image_list();
 }
@@ -93,6 +95,12 @@ function create_container() {
             }, function (res) {
                 document.getElementById("create_container_info").innerHTML = res;
             });
+}
+
+// build cluster
+function build_cluster() {
+   document.getElementById("sh").style.display="block";
+   document.getElementById("body").style.display="block";
 }
 
 // 全选按钮
