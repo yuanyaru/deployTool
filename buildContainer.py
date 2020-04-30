@@ -13,7 +13,6 @@ container_blu = Blueprint('container', __name__)
 @container_blu.route('/image_data', methods=['POST'])
 def get_images():
     ip = request.form.get("ip")
-    print ip
     port = "2375"
     client = docker.Client(base_url='tcp://' + ip + ':' + port)
     images = client.images()
