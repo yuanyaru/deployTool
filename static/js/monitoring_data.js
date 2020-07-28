@@ -43,8 +43,12 @@ function clear_container_table() {
 function show_container_list() {
     $.post("/container_data", {"ip": ip}, function(res) {
         clear_container_table();
-        var resLen = res.length;
-        if (resLen > 2) {
+        if(res.includes("unused")) {
+            // alert(ip + ":2375 is unused!");
+            document.getElementById("cBody").innerHTML = ip + ":2375 is unused!!!";
+        } else {
+            var resLen = res.length;
+            if (resLen > 2) {
             // 将JSON字符串反序列化成JSON对象
             var res2Json = JSON.parse(res);
             for (var i = 0; i<res2Json.length; i++) {
@@ -55,9 +59,9 @@ function show_container_list() {
                 + "</td><td>" + res2Json[i].container_state + "</td></tr>";
 
                 $("#cBody").append(str);
+            }} else {
+                document.getElementById("cBody").innerHTML = "容器列表为空！！！";
             }
-        } else {
-            document.getElementById("cBody").innerHTML = "容器列表为空！";
         }
     });
 }
