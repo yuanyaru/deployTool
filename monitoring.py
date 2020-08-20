@@ -14,7 +14,7 @@ def net_is_used(ip, port):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     try:
         s.connect((ip, port))
-        s.shutdown(2)
+        # s.shutdown(2)
         # print('%s:%d is used' % (ip, port))
         return True
     except:

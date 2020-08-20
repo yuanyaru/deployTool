@@ -17,18 +17,18 @@
     <span class="span0">部 署 工 具</span>
     <span class="span4" id="node_ip"></span>
     <span class="span1" id="time"><span></span>年<span></span>月<span></span>日<span></span>时<span></span>分<span></span>秒</span>
-    <span class="span3"><a id="refresh" href="#" onClick="window.location.reload()">刷新</a></span>
+    <span class="span3"><a id="refresh" href="#" onClick="window.location.reload()"><img src="../static/css/img/refresh.png" title="刷新" height="25" width="25" /></a></span>
 </div>
 
 <div id="nav">
    <ul id="browser" class="filetree treeview-famfamfam">
    <ul>
 		<li id="cluster" class="closed">
-            <span class="folder">集群列表</span>
+            <span class="folder" onclick="show_nodeinfo()">集群列表</span>
                 <ul>
-                {% for i in range(nodeLen) %}
+                {% for i in range(nodeipLen) %}
                     <li class="closed">
-                        <span class="folder" name="ip">{{ nodes[i] }}</span>
+                        <span class="folder" name="ip">{{ nodeips[i] }}</span>
                     </li>
                 {% endfor %}
                 </ul>
@@ -38,6 +38,22 @@
 </div>
 
 <div id="section">
+    <div id="node_info">
+        <fieldset>
+			<legend class="legend">节点信息</legend>
+			<table border="1" width="100%">
+				<tr bgcolor="#F5F5F5">
+					<th><img src="../static/css/img/server.png" height="50" width="50"></th>
+					<th>hostname</th>
+					<th>IP</th>
+					<th>OS</th>
+				</tr>
+                <tbody id="nodeBody">
+                <div id="loading">正在加载......</div>
+                </tbody>
+			</table>
+			</fieldset>
+    </div>
     <div class="row" id="build_container">
         <fieldset>
             <legend class="legend">构建容器</legend>
@@ -84,7 +100,7 @@
                         </div>
                     </div>
                 </section>
-    </fieldset>
+        </fieldset>
     </div>
     <div class="row" id="container_table">
     <fieldset>

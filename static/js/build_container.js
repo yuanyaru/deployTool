@@ -4,6 +4,7 @@ function add_container() {
     document.getElementById("container_table").style.display="none";
     document.getElementById("sh").style.display="none";
     document.getElementById("body").style.display="none";
+    document.getElementById("node_info").style.display="none";
 
     show_image_list();
 }

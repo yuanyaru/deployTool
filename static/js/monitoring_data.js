@@ -3,7 +3,44 @@ var cnames;
 var cnames_rm;
 $(document).ready(function () {
     nodeClick();
+    show_node_list();
 });
+
+// 清空node表格
+function clear_node_table() {
+    $("#nodeBody").text("");
+}
+
+function show_nodeinfo() {
+    clear_node_table();
+    show_node_list();
+    document.getElementById("node_info").style.display="block";
+    document.getElementById("container_table").style.display="none";
+    document.getElementById("build_container").style.display="none";
+}
+
+function show_node_list() {
+    $.post("/set_isused", function (res) {
+        var result = JSON.parse(res);
+        console.log(res);
+        document.getElementById("loading").style.display="none";
+        for (var i = 0; i<result[1].length; i++) {
+            var str1 = "<tr><td><img src=\"../static/css/img/docker.png\" height=\"50\" width=\"50\">"
+                + "</td><td>" + result[2][i]
+                + "</td><td>" + result[1][i] + "<img src=\"../static/css/img/up.png\">"
+                + "</td><td>centos7" + "</td></tr>";
+            var str2 = "<tr><td><img src=\"../static/css/img/docker.png\" height=\"50\" width=\"50\">"
+                + "</td><td>" + result[2][i]
+                + "</td><td>" + result[1][i] + "<img src=\"../static/css/img/down.png\">"
+                + "</td><td>centos7" + "</td></tr>";
+            if(result[0][i].toString() == "true") {
+                $("#nodeBody").append(str1);
+            } else {
+                $("#nodeBody").append(str2);
+            }
+        }
+    })
+}
 
 function nodeClick() {
     var elems = document.getElementsByName("ip");
@@ -30,6 +67,7 @@ function show_container_table() {
     clear_download_info();
     document.getElementById("container_table").style.display="block";
     document.getElementById("build_container").style.display="none";
+    document.getElementById("node_info").style.display="none";
 
     show_container_list();
 }
