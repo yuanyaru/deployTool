@@ -43,5 +43,5 @@ def index():
 
 
 if __name__ == '__main__':
-    set_isused();
+    set_isused()
     app.run(host='0.0.0.0', debug=True)

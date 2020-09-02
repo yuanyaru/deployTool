@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/icon/iconfont.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/common/jquery.treeview.css')}}">
     <script type="text/javascript" src="{{ url_for('static', filename='js/common/jquery-3.3.1.min.js')}}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/common/jquery.treeview.js')}}"></script>
@@ -16,19 +17,28 @@
 <div id="header">
     <span class="span0">部 署 工 具</span>
     <span class="span4" id="node_ip"></span>
-    <span class="span1" id="time"><span></span>年<span></span>月<span></span>日<span></span>时<span></span>分<span></span>秒</span>
-    <span class="span3"><a id="refresh" href="#" onClick="window.location.reload()"><img src="../static/css/img/refresh.png" title="刷新" height="25" width="25" /></a></span>
+    <span class="span1" id="time"><i class="iconfont icon-time"></i>
+        <span></span>年<span></span>月<span></span>日<span></span>时<span></span>分<span></span>秒
+    </span>
+    <span class="span3"><a id="refresh" href="#" onClick="window.location.reload()">
+        <i class="iconfont icon-refresh" title="刷新"></i></a></span>
 </div>
 
 <div id="nav">
    <ul id="browser" class="filetree treeview-famfamfam">
    <ul>
 		<li id="cluster" class="closed">
-            <span class="folder" onclick="show_nodeinfo()">集群列表</span>
+            <span onclick="show_nodeinfo()">集群列表
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="iconfont icon-zhuye"></i>
+            </span>
                 <ul>
                 {% for i in range(nodeipLen) %}
-                    <li class="closed">
-                        <span class="folder" name="ip">{{ nodeips[i] }}</span>
+                    <li>
+                        <i class="iconfont icon-docker"></i>
+                        <span name="ip">{{ nodeips[i] }}</span>
                     </li>
                 {% endfor %}
                 </ul>
@@ -43,7 +53,7 @@
 			<legend class="legend">节点信息</legend>
 			<table border="1" width="100%">
 				<tr bgcolor="#F5F5F5">
-					<th><img src="../static/css/img/server.png" height="50" width="50"></th>
+					<th><i class="iconfont icon-server"></i></th>
 					<th>hostname</th>
 					<th>IP</th>
 					<th>OS</th>
@@ -54,13 +64,19 @@
 			</table>
 			</fieldset>
     </div>
+
     <div class="row" id="build_container">
         <fieldset>
             <legend class="legend">构建容器</legend>
             <input id="image_name" value="请输入要拉取的镜像名称">
-            <input type="button" onclick="pull_image()" value="下载镜像"><br />
+            <a id="download" onClick="pull_image()">
+                <i class="iconfont icon-download" title="下载镜像"></i>
+            </a><br />
             <textarea id="image_pull_info"></textarea>
-            <input type="button" onclick="remove_image()" value="移除" title="移除镜像前，请确保未被任何容器使用！"/>
+{#            <input type="button" onclick="remove_image()" value="移除" title="移除镜像前，请确保未被任何容器使用！"/>#}
+            <a id="remove_image" onClick="remove_image()">
+                <i class="iconfont icon-remove"></i> 移除
+            </a>
             <p></p>
             <table id="table_image" bordercolor="#aaaaaa" border="1" cellpadding="0" cellpadding="2" width="100%">
                 <thead>
@@ -74,9 +90,19 @@
                 </tbody>
             </table>
             image name：<input id="iname"/>
-            container name：<input id="cname"/>  <input type="button" onclick="create_container()" value="创建容器">
+            container name：<input id="cname"/>
+            <a id="create_container" onClick="create_container()">
+                <i class="iconfont icon-build"></i> 创建容器
+            </a>
+            <a id="show_container_table" onClick="show_container_table()">
+                <i class="iconfont icon-find"></i> 查看容器
+            </a>
+            <a id="build_cluster()" onClick="build_cluster()">
+                <i class="iconfont icon-build-cluster"></i> 构建集群
+            </a>
+            {#<input type="button" onclick="create_container()" value="创建容器">
             <input type="button" onclick="show_container_table()" value="查看容器列表">
-            <input type="button" onclick="build_cluster()" value="构建集群">
+            <input type="button" onclick="build_cluster()" value="构建集群">#}
             <textarea id="create_container_info"></textarea><br>
             <textarea id="sh"></textarea>
             <section role="main" id="body">
@@ -102,13 +128,26 @@
                 </section>
         </fieldset>
     </div>
+
     <div class="row" id="container_table">
     <fieldset>
         <legend class="legend">容器列表</legend>
-        <input type="button" onclick="add_container()" value="添加"/>
-        <input type="button" onclick="remove_container()" value="移除" title="移除容器前，请先停止该容器！"/>
-        <input type="button" onclick="stop_container()" value="停止"/>
-        <input type="button" onclick="start_container()" value="启动"/>
+        <a id="add" onClick="add_container()">
+            <i class="iconfont icon-add"></i> 添加
+        </a>
+        <a id="remove_container" onClick="remove_container()">
+            <i class="iconfont icon-remove"></i> 移除
+        </a>
+        <a id="start" onClick="start_container()">
+            <i class="iconfont icon-start"></i> 启动
+        </a>
+        <a id="stop" onClick="stop_container()">
+            <i class="iconfont icon-stop"></i> 停止
+        </a>
+{#        <input class="iconfont icon-add" type="button" onclick="add_container()" value="添加"/>#}
+{#        <input type="button" onclick="remove_container()" value="移除" title="移除容器前，请先停止该容器！"/>#}
+{#        <input type="button" onclick="stop_container()" value="停止"/>#}
+{#        <input type="button" onclick="start_container()" value="启动"/>#}
         <p></p>
         <div contenteditable>
             <table id="table_info" bordercolor="#aaaaaa" border="1" cellpadding="0" cellpadding="2" width="100%">
@@ -131,8 +170,8 @@
 
 <div id="footer">
     @2020  西安端怡科技有限公司
-    <span id="about">关于产品</span>
-    <span id="contect">联系我们</span>
+    <span id="about"><i class="iconfont icon-about"></i>&nbsp;&nbsp;关于产品</span>
+    <span id="contect"><i class="iconfont icon-connect"></i>&nbsp;&nbsp;联系我们</span>
 </div>
 <script type="text/javascript" src="{{ url_for('static', filename='js/Client.js')}}"></script>
 </body>

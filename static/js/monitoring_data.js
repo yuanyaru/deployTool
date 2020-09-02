@@ -25,11 +25,11 @@ function show_node_list() {
         console.log(res);
         document.getElementById("loading").style.display="none";
         for (var i = 0; i<result[1].length; i++) {
-            var str1 = "<tr><td><img src=\"../static/css/img/docker.png\" height=\"50\" width=\"50\">"
+            var str1 = "<tr><td><i class=\"iconfont icon-Docker\"></i>"
                 + "</td><td>" + result[2][i]
                 + "</td><td>" + result[1][i] + "<img src=\"../static/css/img/up.png\">"
                 + "</td><td>centos7" + "</td></tr>";
-            var str2 = "<tr><td><img src=\"../static/css/img/docker.png\" height=\"50\" width=\"50\">"
+            var str2 = "<tr><td><i class=\"iconfont icon-Docker\"></i>"
                 + "</td><td>" + result[2][i]
                 + "</td><td>" + result[1][i] + "<img src=\"../static/css/img/down.png\">"
                 + "</td><td>centos7" + "</td></tr>";

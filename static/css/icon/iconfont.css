@@ -1,0 +1,93 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1598941507857'); /* IE9 */
+  src: url('iconfont.eot?t=1598941507857#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAA0IAAsAAAAAGMgAAAy7AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCFKgqhIJtNATYCJANECyQABCAFhG0HgU4bBxUjESaM1Un21wfcGCJvYH2gUDXLbDPvSHTv9m32V7TY6qEEMAAO4SqOLd/fwMbtxiWt+TnvI6D2vtsrr/xWXdJV8l3iK+PpGoViUGi6R3gUxvXxVYFPVRHqhqfN/bt7x2D3qNgaHa7aaFaNSuj+dxUmVh/aoE0stBeMWRHEjM4hbG7FHG3ajJbD4aU/AHoAAcJ5mn8oQHODPHSr4F2as9ETChVhinL2yaPPrjkoJD0a/bRfrf7dE5Gkcwoe0nWsVEKbN/+vjKwMPru4zR4mVhJUPRFtiLWDBBVvEEmRTEkVi7Hp/aoAK5FhrrNvArrWhcPupNZgyBgL2OFZ9TsYsdmyIiVovbWkzczEloLQxgX4RQB8cL98uAGxISCqEmD9uvs0L/k59vJzotopbZoNfn0K/fZIWAEy4Z80+BdAn65c3pXtTviEddzOnx+eY8/cn7GecXnqJoGC2iATTNPy8nNpp6rcNdx6rOzWYJ1XlvKOa/sfeNHQSK2jq9UzRuhrBAOJUAPifUT83DgGzjFzDBXn7mOInLPGMOScO4YR555jqDnvypQR3SB1IRIgtRAKSD0INcw2xSBIGWICpD7ENEgNhBVSgGjBGAZcfRbO67BJG9uAV0D1HIBmCVj8e1Wj4L4GFbkUkg0qDOCcwpkfZ7JfIaeDR2gkV8j1Cgv39eIRRm3uPDGb7t6RRhA0YysPppTJ5IqPEXNnsTkEg8mUhnOYiMmr4hECAZM5xf5E6Xiqcj3XOJ8NJgGJkRjCEEBTMCYkcSZg4QhOOtLXIjGbxbuD9/rWikzdG4MkFhEyiUxCYcPp817iug1h9UGS5lPnPEUmo7BBqEGNnlQDqfdLWT0BZSRHYhZjG3q2FrWGSSwSkUkEjEahUmUyAaFRmOPpr6FhmM4iQbIeKM1icdNeDyNY1d3UaGmWIFSgJzvJnZf9zBJMt+UCQoYQkQmAslJc1Okm2hNVj63u0UTuDDdqkCOmFoC16Q0VBvZvx5Y+RB0eCs1ABdC/hdp4dpnqEdo1AQFk6NocZPPbpt5LRC3HfJsdnUTCjfZU+wO13an2cmokCOPVl685Hmh19Lba49l2Fdbt6urqatkjv3dnvIEkG/SB2DEHcjzWnHJF7bfL9OY5uuusFZ9zaVzi9omrIopSYZ90N7s0XIcqA5Z7KBdceSMQINXmuWrkF0NV5p9RX5+UBhNl1Jt1FpFBZASUyCIxgcQeJYKm894HnaEiV9/Hat+t9mzx/ut+O5PPwl0CDzlUBnWdV+QZNJ7SNNl0rYYWyjqm7nioWFiz1nNVSPxOki20qzyBw6E5WMaumiTiJqeshAQIwywwmapjZ/qQzzVygiGUNhqCKls3HD4dXATrDusPeuAltpMH14VMYg+eKXUIcQxHdIenVNj0wWVHHSkIX3WtM4K6VoQMLZ442nPDH6IzrmKnU30irHc4VHa7B1EMtxLV/McymES40Ugyr5PboMVyvZ46Ub/ZAtLUYmjV2fRWldEKcCqyTgLNttJ8w2m4NIddaS+wWxBA4ued6sPOwX1VvSaQOCVS9VUPrIdPbpWr1mDZlHQHGLmdjGLxANCo+wspR4TK0O3odOZezryStLY6pTqWczb7YhsMtC+86zMDpmu6Cql3Xnf6SQ7bXC3fglnE6tV4GSbJlMZN1EYZu2mzbkvQlJqDMm7TYS9a/ZEgXuMhT6IE05nvFAo1t16x1BaRVtDMnE7oHrLQCEBqt0aEDM0SzKyci1ku9UOlVjnHTYCJaAYhMHW9sNxkkFRaLGJdYIlZWNSwsrS4qGSSWqmyDU2wgeqkukvzamWST9kYrtywPcqZDVaqBbGOyi7SgFHXaZ6eNMt9owcgIYb7OkJ6hzgckx17HIunOUAvXf/8FqvG2mJ/ek2aJtCNks+a+fqO+ucY8qjaB1ss65GS/HWFAi/pNLKtw+risLaAv6Fh13smLorO+ClIXzLO99+BUQTAEJ1k/Tc/hZVP17vjDL1bofj+uo19lKoDE+TaayxIVMempKVndNQQhO9Vgpgbp4xgLGBA0/j9/mmhdgFjwqAYxdYiunE4x3/D6I4fRKU4/TqT8Dewl9fuyWHR/Q/5+tD9KF6AG/S9Boni/+XuKT+FS5OXCtxo3qIH3UekFNDk4MVpLzqzYLqWfHPNelGHI7yHI+UP3lrlUgHtq4/kakbBssQ8up5BMPT0Rr/LPj4Mv9fHfCr++zK0sozh2m6B2Z28CgJDzxKbbhkHRv9IJI48nzFF1RGmb/WzHQLFYENOnLJRmk0fwCnQDh9+a/isYhi6pXAaViFNyPJce5CeL0ubNsywXp6KXS7OLdnh/gjDadIwCmyb3UW9B3hZU3fQ+vsM5GfCVUVCVmDJURX3l+9mTumOkEfg/ka8MnBM+IWVmcVdjzaMzKjteWyPTgNHtDklJzw/RUvDqa1zu6jrwb/JeToGX5kQkYYdHpUr7939VlgZ6BqXnB+xlZHHYOXS8+jsXP8QC9IL6KoCdvmBEzgTO9+vLqRrzxXhAVSFBYUH1FUfomPSlOeeII1cflDUOdL6mnTteSfySQ3Hi5iDMw9r/XBt5rZPtHe16J34LR8F75qgtAONXiQXQIJex7VxbKd6Hy4t6zZvKq2pww6UHTc/rtdO1ME8jTavW9nvb9/rr3XnS0Ue6zZN6V6KcRRZ183xd8vIA5dWF/2JuBvzNuLPCr+8gA3nNn465RHfKypUtsmfnuOfvgxG567OHAx2Av6a1MaH/fzyp55ZIydc6tBKtm5mZVXlG3fW9NUxRlkxugo7Xr5dp6sqq2YNAbTVR0ZGTcmKiesWG817byXjusaRLeIP8oBZLTGxuk3/vOO7xHvbu4I+/faubz2QdYGaokKrbvSNJ2vX1gHxRXGF2UUaqN26gIzv+zikCrS/Bb56CbfCLeTfQnAIU7bArbumL4GHDsHFcAnRJT0gAMbQmC8IdJckyHuIQPdISN4DUgHVRkiltJu0Npu2EUY20Ubc3IW14cAh4s8fwnIfAsAV7nZ4spTF8+b5mLq/9iqPBdj+aGUBJg+cj1+BX9rPW04ua7i/xH+p17vFkfqgRWN/z+2V4pN5cAK2eYnnWOHYIWeHR44Ia0tIKpaXiR/0V90bH21L5168yAP+a+RS9vwjR+7u3uW/cD1sa4Md9/oewBXeAxnXa436BQ743BmBiTn4pPXrJ+EKoMvJnjVZUHRkBu+8yAhPn4bGaI+BFRF5qwtKwKKroPvVfuJElbYp+fix/NBEkIePq68fiwPbQ8LHKUIT848dTzarteJESXImf0LABAyaz5wxQ/jPnrGGxJ8gq8Qyv6dj/YYOVWBYYLJPuXeyG64YOkyBAad10P5W+OrV0XFvtcFyhUOCywGmqfh9Rk/wK8aBOC2n6GyvMwqt4kyvs4rB7lbWvAfDH8xjzXTtI3T5s2SGjWExnx4UFW3lj+XvE0wXWgVYtVcaFSR9SrKUxWVqWP6sQsK0J+KypEF0G32i/mx/dmcXdgHbn6Vhcm1C+RMZdfSgNKRhEvpQWEDc7yZWwi25j41dzBAwbn547rr3gd7/7hsv19423u569WJBVJIsL7j2jvHOgNDEgLJoL5n7TXwMt/QeznDjOgeFJckyZYqZ5AQkygpCmwPSJI6wXT7eEruI3R8/7HJwF/uYqv34sXKBWkVABb+UR9WDGYUSRe9vaZS7VavPQlU7ezYvcwpS7T9l8VY54GMwsf1jocKBOqDctwb6IZ8KDqn825phnP8oLuWAqk1PoBSAYvFuWE3BB9bGFRWsTtpOCqT32HTNNhj+i6MuH1uXQk6vr6E/Iav/jy2pA+2S9QH9FVoxD6bW7wuZTyqMj66Zk82Z5IllbvujveTyMw66xD01qI4M0rHa2M4kHvT/nFR0+RIKLZm6165noW39rPEsQhQ11lDS2rXliBWq9ByiWusIde1La79nZjQoZHfAnjkGCsa2oGjoM0rGLtlyxF1UWXqLauMAdT0Ogi72nBAY3O1bIEzUwe4ETglrMS/dejt+k8kjhqjTzfunEN1qaCKjk5u/iCnU0UzcmzYlDTrIBJ9G/2gcBeYgPalU2pTmbRVVIWu2VDItbiUFwmSX7cDuNLlTwvrO6Tb1+b/J5BGD4ojTyf8pRHf/oFGqNWxfnLWOuC67x71pJVIazP2DTOCTFI18g4BZXltPKpVsiXXzVkVn0rq8bN8znfYcnHxHZa3zwgoTimYwWT8UurQ5XB6fF1519cIh96Z+q2xGNn4dfPkuaqBw2TnVHh2e0V2cbT6Rpp8NKXdpxjWc8qWyOCDfHNWVRaJ4Jpgd1dyM1UxwdIH40rtQNg+987kZyUNsxZWRPJMn12qgXSwA') format('woff2'),
+  url('iconfont.woff?t=1598941507857') format('woff'),
+  url('iconfont.ttf?t=1598941507857') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1598941507857#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 24px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-time:before {
+  content: "\e638";
+  color: white;
+}
+
+.icon-refresh:before {
+  content: "\e650";
+  color: white;
+}
+
+.icon-download:before {
+  content: "\e601";
+  color: #0077aa;
+}
+
+.icon-server:before {
+  content: "\e60d";
+  color: #0077aa;
+}
+
+.icon-Docker:before {
+  content: "\e9f3";
+  color: #0077aa;
+}
+
+.icon-zhuye:before {
+  content: "\e619";
+  color: #0077aa;
+}
+
+.icon-docker:before {
+  content: "\e659";
+}
+
+.icon-add:before {
+  content: "\e6a8";
+  color: #0086b3;
+}
+
+.icon-remove:before {
+  content: "\e656";
+  color: yellow;
+}
+
+.icon-stop:before {
+  content: "\e67d";
+  color: greenyellow;
+}
+
+.icon-start:before {
+  content: "\e6a9";
+  color: red;
+}
+
+.icon-about:before {
+  content: "\e641";
+}
+
+.icon-connect:before {
+  content: "\e677";
+}
+
+.icon-build:before {
+  content: "\e609";
+  color: red;
+}
+
+.icon-find:before {
+  content: "\e637";
+  color: #0086b3;
+}
+
+.icon-build-cluster:before {
+  content: "\e610";
+  color: greenyellow;
+}

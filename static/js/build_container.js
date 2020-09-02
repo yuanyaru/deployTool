@@ -52,7 +52,7 @@ function get_image_len() {
 function remove_image() {
     var inames_len = get_image_len();
     if (inames_len > 0)  {
-        if (confirm("确认要移除镜像的吗？")) {
+        if (confirm("确认要移除镜像吗？")) {
             $.post("remove_image", {
                 "ip": ip,
                 "inames_rm": JSON.stringify(inames_rm)
